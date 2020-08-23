@@ -13,5 +13,13 @@ Vue.use(BootstrapVue);
 new Vue({
   router,
   store,
+  methods: {
+    init() {
+      console.log("hola");
+    }
+  },
+  created() {
+    this.init();
+  },
   render: h => h(App)
 }).$mount("#app");
