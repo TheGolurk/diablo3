@@ -1,17 +1,54 @@
 <template>
   <div>
+    <BaseLoading v-if="isLoading" />
     <h1>Profile View</h1>
   </div>
 </template>
 
 <script>
+import BaseLoading from "@/components/BaseLoading";
+import setError from "@/mixins/setError";
+import { getApiAcoount } from "@/api/search";
+
 export default {
   name: "ProfileView",
+  mixins: [setError],
+  components: { BaseLoading },
+  data() {
+    return {
+      isLoading: false,
+      profileData: null
+    };
+  },
   created() {
-    this.fetchData();
+    this.isLoading = true;
+    const { region, battleTag, account } = this.$route.params;
+    this.fetchData(region, account);
   },
   methods: {
-    fetchData() {}
+    fetchData(region, account) {
+      getApiAcoount({ region, account })
+        .then(({ data }) => {
+          this.profileData = data;
+        })
+        .catch(err => {
+          this.profileData = null;
+          const errObj = {
+            routeParams: this.$route.params,
+            message: err.message
+          };
+          if (err.response) {
+            errObj.data = err.response.data;
+            errObj.status = err.response.status;
+          }
+
+          this.setApiErr(errObj);
+          this.$route.push({ name: "Error" });
+        })
+        .finally(() => {
+          this.isLoading = false;
+        });
+    }
   }
 };
 </script>
