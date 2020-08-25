@@ -1,11 +1,16 @@
 <template>
   <div class="home">
-    <h1>helo</h1>
+    <HomeTitle />
   </div>
 </template>
 
 <script>
+import HomeTitle from "./HomeTitle";
+
 export default {
-  name: "Home"
+  name: "Home",
+  components: {
+    HomeTitle
+  }
 };
 </script>
