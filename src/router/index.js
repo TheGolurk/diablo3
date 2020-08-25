@@ -15,6 +15,7 @@ const routerOptions = [
 const routes = routerOptions.map(r => {
   return {
     ...r,
+    // Lazy load
     component: () => import(`@/views/${r.name}/Index.vue`)
   };
 });

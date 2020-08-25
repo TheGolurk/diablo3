@@ -6,6 +6,12 @@
 
 <script>
 export default {
-  name: "ProfileView"
+  name: "ProfileView",
+  created() {
+    this.fetchData();
+  },
+  methods: {
+    fetchData() {}
+  }
 };
 </script>
