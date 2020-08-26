@@ -1,7 +1,7 @@
 <template>
   <div class="grid-container">
     <div class="grid-item item-left">
-      <TopHeroes v-if="hasHeroes" :heroes="topHeroes" />
+      <TopHeroes v-if="hasHeroes" :heroes="TopHeroes" />
     </div>
     <div class="grid-item item-right">
       <h1>Derecha</h1>
