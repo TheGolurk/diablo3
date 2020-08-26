@@ -7,7 +7,7 @@ export default {
   },
   mutations: {
     SET_ACCESS_TOKEN(state, payload) {
-      state.accessToken = payload;
+      state.access_token = payload;
     }
   },
   actions: {

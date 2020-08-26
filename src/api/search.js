@@ -10,9 +10,10 @@ function getApiAccount({ region, account }) {
   const API_URL = `${protocol}${region}${host}${resource}`;
   const locale = locales[region];
   const params = {
-    access_token: store.state.oauth.access_Token,
+    access_token: store.state.oauth.access_token,
     locale
   };
+
   return get(API_URL, { params });
 }
 
