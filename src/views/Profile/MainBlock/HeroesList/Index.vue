@@ -30,9 +30,13 @@
 <script>
 import HeroIco from "./HeroIco";
 import HeroClassLevel from "./HeroClassLevel";
+import { formatNumber } from "@/filters/numeral";
 
 export default {
   name: "HeroesList",
+  filters: {
+    formatNumber
+  },
   props: {
     heroes: {
       required: true,
