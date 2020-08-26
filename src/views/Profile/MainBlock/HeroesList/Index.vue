@@ -1,7 +1,15 @@
 <template>
   <div>
     <h1>Heroes List</h1>
-    <b-table dark :items="heroes" />
+    <b-table
+      :items="heroes"
+      :fields="fields"
+      dark
+      hover
+      small
+      striped
+      stacked="sm"
+    />
   </div>
 </template>
 
