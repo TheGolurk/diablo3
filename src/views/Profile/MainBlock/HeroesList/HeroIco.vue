@@ -34,3 +34,21 @@ export default {
   }
 };
 </script>
+
+<style lang="stylus">
+.hero-ico {
+  vertical-align: middle;
+
+  .hero-image {
+    width: 30px;
+    height: 26px;
+    display: inline-block;
+    background-size: 210%;
+  }
+
+  .hero-name {
+    height: 24px;
+    display: inline-block;
+  }
+}
+</style>
