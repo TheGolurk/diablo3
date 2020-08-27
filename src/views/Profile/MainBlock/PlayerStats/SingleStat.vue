@@ -6,7 +6,11 @@
         <div class="d-block ico-cont">
           <div class="text-center">
             <!-- Ícono & Color-->
-            <font-awesome-icon :icon="icoName" class="fa-3x" :style="{color: icoColor}" />
+            <font-awesome-icon
+              :icon="icoName"
+              class="fa-3x"
+              :style="{ color: icoColor }"
+            />
           </div>
         </div>
         <div class="flex-grow-1">
