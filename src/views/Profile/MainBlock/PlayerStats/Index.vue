@@ -32,9 +32,23 @@
 import heroName from "@/mixins/heroName";
 import SingleStat from "./SingleStat";
 import TimePlayed from "./TimePlayed";
+import { HeroData } from "@/utils/typeValidation";
 
 export default {
   name: "PlayerStats",
+  computed: {
+    timePlayed() {
+      return Object.keys(this.stats.timePlayed)
+        .sort()
+        .map(hero => {
+          return new HeroData(
+            this.classToName(hero),
+            this.stats.timePlayed[hero],
+            hero
+          );
+        });
+    }
+  },
   mixins: [heroName],
   components: {
     TimePlayed,

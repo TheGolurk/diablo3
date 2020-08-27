@@ -1,16 +1,11 @@
 <template>
   <div class="grid-container">
     <div class="grid-item item-left">
-      <TopHeroes v-if="hasHeroes" :heroes="TopHeroes" />
+      <TopHeroes v-if="hasHeroes" :heroes="topHeroes" />
 
       <HeroesList v-if="hasHeroesList" :heroes="heroesList" />
-      <div class="grid-item item-left">
-        <TopHeroes v-if="hasHeroes" :heroes="topHeroes" />
 
-        <HeroesList v-if="hasHeroesList" :heroes="heroesList" />
-
-        <ProgressList :acts="profileData.progression" />
-      </div>
+      <ProgressList :acts="profileData.progression" />
     </div>
     <div class="grid-item item-right">
       <PlayerStats :stats="statsData" />
