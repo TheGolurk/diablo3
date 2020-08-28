@@ -24,7 +24,35 @@ export default {
       items: null
     };
   },
-  computed: {},
+  computed: {
+    detailHeader() {
+      // Asignamos valores a través de
+      const {
+        name,
+        // valor: alias
+        class: classSlug,
+        gender,
+        level,
+        hardcore,
+        seasonal,
+        paragonLevel,
+        alive,
+        seasonCreated
+      } = this.hero;
+
+      return {
+        name,
+        classSlug,
+        gender,
+        level,
+        hardcore,
+        seasonal,
+        paragonLevel,
+        alive,
+        seasonCreated
+      };
+    }
+  },
   created() {
     this.isLoadingHero = true;
     this.isLoadingItems = true;
