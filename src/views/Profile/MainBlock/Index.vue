@@ -32,7 +32,7 @@ export default {
     hasHeroes() {
       return this.profileData.heroes.length > 0;
     },
-    TopHeroes() {
+    topHeroes() {
       return this.profileData.heroes.slice(0, 3);
     },
     hasHeroesList() {

@@ -23,8 +23,8 @@ export default {
       type: Array
     },
     heroTime: {
-      type: HeroData,
-      required: true
+      required: true,
+      type: HeroData
     }
   },
   computed: {
