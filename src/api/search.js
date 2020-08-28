@@ -27,7 +27,7 @@ function getApiHero({ region, account, heroId }) {
     locale
   };
 
-  return get(API_URL, params);
+  return get(API_URL, { params });
 }
 
 function getApiDetailedHeroItems({ region, account, heroId }) {
@@ -36,7 +36,7 @@ function getApiDetailedHeroItems({ region, account, heroId }) {
   const locale = locales[region];
 
   const params = {
-    access_token: store.state.oauth.accessToken,
+    access_token: store.state.oauth.access_token,
     locale
   };
 
