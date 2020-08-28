@@ -1,6 +1,6 @@
 <template>
   <!-- Contenedor principal -->
-  <div class="hero-portrait-wrapper mb-5 mb-sm-0">
+  <div class="hero-portrait-wrapper mb-5 mb-sm-0" @click="goToHero(hero.id)">
     <!-- Avatar -->
     <div class="bg-secondary d-flex justify-content-center p-3 p-sm-0">
       <!-- Imagen de fondo, según la clase y el género -->
@@ -27,15 +27,15 @@
       >
         <small class="elite-kills">
           <!-- Jefes (Élites) asesinados -->
-          <span class="text-monospace">{{
-            hero.kills.elites | formatNumber
-          }}</span>
+          <span class="text-monospace">
+            {{ hero.kills.elites | formatNumber }}
+          </span>
           Elite kills
         </small>
         <!-- Nivel. De color rojo si el héroe está muerto -->
-        <small class="level-circle" :class="{ 'text-danger': hero.dead }">
-          {{ hero.level }}
-        </small>
+        <small class="level-circle" :class="{ 'text-danger': hero.dead }">{{
+          hero.level
+        }}</small>
       </div>
     </div>
   </div>
@@ -43,12 +43,14 @@
 
 <script>
 import { formatNumber } from "@/filters/numeral";
+import goToHero from "@/mixins/goToHero";
 
 export default {
   name: "TopHero",
   filters: {
     formatNumber
   },
+  mixins: [goToHero],
   props: {
     hero: {
       type: Object,
