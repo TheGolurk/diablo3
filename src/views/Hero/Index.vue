@@ -28,13 +28,13 @@ import setError from "@/mixins/setError";
 import { getApiHero, getApiDetailedHeroItems } from "@/api/search";
 
 import HeroAttributes from "./HeroAttributes/Index";
-
 import HeroDetailHeader from "./HeroDetailHeader";
+import HeroSkills from "./HeroSkills/Index";
 
 export default {
   name: "HeroView",
   mixins: [setError],
-  components: { BaseLoading, HeroDetailHeader, HeroAttributes },
+  components: { BaseLoading, HeroDetailHeader, HeroAttributes, HeroSkills },
   data() {
     return {
       isLoadingHero: false,

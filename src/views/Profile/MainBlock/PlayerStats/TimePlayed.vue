@@ -12,19 +12,13 @@
 
 <script>
 import TimePlayedHero from "./TimePlayedHero";
-import { HeroData } from "@/utils/typeValidation";
 
 export default {
   name: "TimePlayed",
-  components: { TimePlayedHero },
   props: {
     timePlayed: {
       required: true,
       type: Array
-    },
-    heroTime: {
-      required: true,
-      type: HeroData
     }
   },
   computed: {
@@ -33,6 +27,7 @@ export default {
     classHeroBg() {
       return `hero-bg-color-${this.heroTime.classSlug}`;
     }
-  }
+  },
+  components: { TimePlayedHero }
 };
 </script>
