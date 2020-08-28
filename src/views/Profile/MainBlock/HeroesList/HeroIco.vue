@@ -1,5 +1,8 @@
 <template>
-  <div class="hero-ico d-flex align-items-center" @click="goToHero(hero.id)">
+  <div
+    class="hero-ico d-flex align-items-center hover-cursor-pointer"
+    @click="goToHero(hero.id)"
+  >
     <span class="hero-image border" :class="heroClassImg" />
     <span
       class="hero-name ml-2 font-weight-bold"
