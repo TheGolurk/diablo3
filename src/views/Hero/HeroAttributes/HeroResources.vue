@@ -10,7 +10,9 @@
         </div>
         <!-- Valor -->
         <div class="ml-3">
-          <span class="text-monospace">{{ resources.resources.life.val | formatNumber }}</span>
+          <span class="text-monospace">{{
+            resources.resources.life.val | formatNumber
+          }}</span>
         </div>
       </div>
     </div>
@@ -22,19 +24,22 @@
         <!-- Imagen Recurso -->
         <div class="resource-icon" :class="classResourceName" />
         <!-- Nombre -->
-        <div class="ml-3 text-uppercase name-text" :class="'resource-name-' + resources.classSlug">
+        <div
+          class="ml-3 text-uppercase name-text"
+          :class="'resource-name-' + resources.classSlug"
+        >
           <span>{{ displayResourceName }}</span>
         </div>
         <div class="ml-3">
           <!-- Valor -->
           <span class="text-monospace">
             {{ resources.resources.primaryResource.val | formatNumber }}
-            <template
-              v-if="hasSecondaryResource"
-            >
+            <template v-if="hasSecondaryResource">
               <!-- Valor recurso secundario -->
               <span class="mx-0 text-muted">/</span>
-              <span>{{ resources.resources.secondaryResource.val | formatNumber }}</span>
+              <span>{{
+                resources.resources.secondaryResource.val | formatNumber
+              }}</span>
             </template>
           </span>
         </div>

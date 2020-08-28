@@ -23,19 +23,18 @@
 </template>
 
 <script>
+import BaseLoading from "@/components/BaseLoading";
 import setError from "@/mixins/setError";
 import { getApiHero, getApiDetailedHeroItems } from "@/api/search";
 
 import HeroAttributes from "./HeroAttributes/Index";
-import HeroItems from "./HeroItems/Index";
 
-import BaseLoading from "@/components/BaseLoading";
 import HeroDetailHeader from "./HeroDetailHeader";
 
 export default {
   name: "HeroView",
   mixins: [setError],
-  components: { BaseLoading, HeroDetailHeader, HeroAttributes, HeroItems },
+  components: { BaseLoading, HeroDetailHeader, HeroAttributes },
   data() {
     return {
       isLoadingHero: false,
