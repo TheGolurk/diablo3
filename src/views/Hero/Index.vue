@@ -1,18 +1,21 @@
 <template>
-  <div>
-    <h1>Hero View</h1>
+  <div class="hero-view">
+    <BaseLoading v-if="isLoadingHero" />
+    <HeroDetailHeader v-if="hero" :detail="detailHeader" />
   </div>
 </template>
 
 <script>
 import setError from "@/mixins/setError";
-import BaseLoading from "@/components/BaseLoading";
 import { getApiHero, getApiDetailedHeroItems } from "@/api/search";
+
+import BaseLoading from "@/components/BaseLoading";
+import HeroDetailHeader from "./HeroDetailHeader";
 
 export default {
   name: "HeroView",
   mixins: [setError],
-  components: { BaseLoading },
+  components: { BaseLoading, HeroDetailHeader },
   data() {
     return {
       isLoadingHero: false,
