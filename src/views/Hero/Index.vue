@@ -2,6 +2,23 @@
   <div class="hero-view">
     <BaseLoading v-if="isLoadingHero" />
     <HeroDetailHeader v-if="hero" :detail="detailHeader" />
+
+    <b-row>
+      <!-- 12 columnas de 'xs' -> 'md', 8 columnas desde 'lg' hacia arriba  -->
+      <!-- En 'lg' orden 2 -->
+      <b-col md="12" lg="8" order-lg="2">
+        <BaseLoading v-if="isLoadingItems" />
+      </b-col>
+
+      <!-- 12 columnas de 'xs' -> 'md', 4 columnas desde 'lg' hacia arriba -->
+      <!-- En 'lg' orden 1 -->
+      <b-col md="12" lg="4" order-lg="1">
+        <template v-if="hero">
+          <HeroAttributes :attributes="detailStats" />
+          <HeroSkills :skills="hero.skills" />
+        </template>
+      </b-col>
+    </b-row>
   </div>
 </template>
 
@@ -9,13 +26,16 @@
 import setError from "@/mixins/setError";
 import { getApiHero, getApiDetailedHeroItems } from "@/api/search";
 
+import HeroAttributes from "./HeroAttributes/Index";
+import HeroItems from "./HeroItems/Index";
+
 import BaseLoading from "@/components/BaseLoading";
 import HeroDetailHeader from "./HeroDetailHeader";
 
 export default {
   name: "HeroView",
   mixins: [setError],
-  components: { BaseLoading, HeroDetailHeader },
+  components: { BaseLoading, HeroDetailHeader, HeroAttributes, HeroItems },
   data() {
     return {
       isLoadingHero: false,
@@ -25,6 +45,10 @@ export default {
     };
   },
   computed: {
+    detailStats() {
+      // Devuelve el contenido de stats y agrega classSlug
+      return { ...this.hero.stats, classSlug: this.hero.class };
+    },
     detailHeader() {
       // Asignamos valores a través de
       const {

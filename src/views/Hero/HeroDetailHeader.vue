@@ -20,7 +20,7 @@
               ({{ detail.paragonLevel }})
             </span>
             <!-- Clase (A través del Mixin) -->
-            <span>· {{classToName(detail.classSlug)}}</span>
+            <span>· {{ classToName(detail.classSlug) }}</span>
             <!-- ¿Es de temporada? -->
             <span v-if="detail.seasonal" class="text-success">· Seasonal</span>
             <!-- ¿Es hardcore? -->
