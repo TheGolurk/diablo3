@@ -10,14 +10,11 @@
 </template>
 
 <script>
-import ActiveSkills from "./ActiveSkills";
-import PassiveSkills from "./PassiveSkills";
-
 export default {
   name: "HeroSkills",
   components: {
-    ActiveSkills,
-    PassiveSkills
+    ActiveSkills: () => import("./ActiveSkills"),
+    PassiveSkills: () => import("./PassiveSkills")
   },
   props: {
     skills: {
