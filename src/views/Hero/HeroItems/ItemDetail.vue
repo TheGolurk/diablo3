@@ -1,6 +1,9 @@
 <template>
   <!-- Clase que determina el color -->
-  <div class="text-center bg-dark h-100 pt-3 d3-icon-item" :class="itemClassColor">
+  <div
+    class="text-center bg-dark h-100 pt-3 d3-icon-item"
+    :class="itemClassColor"
+  >
     <div class="d-flex flex-column justify-content-between h-100">
       <!-- Si el item tiene ID, es que tenemos la información -->
       <!-- Es decir, que tiene un objeto equipado. -->
@@ -10,7 +13,7 @@
             <!-- Nombre del objeto -->
             <p class="text-muted">{{ item.name }}</p>
             <!-- Imagen correspondiente al objeto -->
-            <img :src="itemUrl" :alt="item.slotName + ' ' + item.name " />
+            <img :src="itemUrl" :alt="item.slotName + ' ' + item.name" />
           </div>
         </div>
 
@@ -22,7 +25,11 @@
             <small>{{ gemOrJewel }}:</small>
             <ul class="list-inline">
               <!-- Un objeto puede tener varias gemas -->
-              <li v-for="(gem, index) in item.gems" :key="'gem-'+index" class="list-inline-item">
+              <li
+                v-for="(gem, index) in item.gems"
+                :key="'gem-' + index"
+                class="list-inline-item"
+              >
                 <!-- Componente gema -->
                 <ItemDetailGem :gem="gem" />
               </li>
@@ -33,7 +40,7 @@
       <!-- En caso de que no tenga el objeto equipado -->
       <p v-else>
         <!-- Mostramos el nombre del slot y dejamos el contenido vacío -->
-        <b-badge class="text-dark">{{item.slotName}}</b-badge>
+        <b-badge class="text-dark">{{ item.slotName }}</b-badge>
       </p>
     </div>
   </div>

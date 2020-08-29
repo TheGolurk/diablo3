@@ -4,8 +4,16 @@
     <hr class="bg-white" />
 
     <b-nav pills small>
-      <b-nav-item :active="!isPassiveSkillsActive" @click="changeComponent('ActiveSkills')">Active</b-nav-item>
-      <b-nav-item :active="isPassiveSkillsActive" @click="changeComponent('PassiveSkills')">Passive</b-nav-item>
+      <b-nav-item
+        :active="!isPassiveSkillsActive"
+        @click="changeComponent('ActiveSkills')"
+        >Active</b-nav-item
+      >
+      <b-nav-item
+        :active="isPassiveSkillsActive"
+        @click="changeComponent('PassiveSkills')"
+        >Passive</b-nav-item
+      >
     </b-nav>
 
     <keep-alive>
