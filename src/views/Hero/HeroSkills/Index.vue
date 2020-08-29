@@ -13,8 +13,10 @@
 export default {
   name: "HeroSkills",
   components: {
-    ActiveSkills: () => import("./ActiveSkills"),
-    PassiveSkills: () => import("./PassiveSkills")
+    ActiveSkills: () =>
+      import(/* webpackChunkName: "ActiveSkills" */ "./ActiveSkills"),
+    PassiveSkills: () =>
+      import(/* webpackChunkName: "PassiveSkills" */ "./PassiveSkills")
   },
   props: {
     skills: {
