@@ -31,6 +31,12 @@ export default {
       const host = `http://media.blizzard.com/d3/icons/skills/${sizes[42]}/`;
       return `${host}${this.skill.icon}.png`;
     }
+  },
+  created() {
+    console.log("CREADO!");
+  },
+  destroyed() {
+    console.log("DESTRUIDO!");
   }
 };
 </script>
