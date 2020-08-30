@@ -7,6 +7,7 @@ import store from "./store";
 import "./assets/css/main.styl";
 import "./plugins/bootstrapVue";
 import "./plugins/fontAwesome";
+import "./directives";
 
 Vue.config.productionTip = false;
 
