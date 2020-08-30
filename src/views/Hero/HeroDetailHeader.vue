@@ -8,7 +8,9 @@
 
       <div class="text-center">
         <!-- Nombre -->
-        <h1 v-diablo:bone class="font-diablo text-truncate text-bone">{{ detail.name }}</h1>
+        <h1 v-diablo:bone class="font-diablo text-truncate text-bone">
+          {{ detail.name }}
+        </h1>
 
         <div class="text-monospace">
           <small>

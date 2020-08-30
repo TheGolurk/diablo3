@@ -6,11 +6,14 @@
 
       <hr class="bg-dark mb-5" />
 
-      <p
-        class="lead"
-      >Diablo III is a genre-defining action-RPG set in Sanctuary, a world ravaged by the eternal conflict between angels and demons.</p>
       <p class="lead">
-        <span class="font-weight-bold">D3PF</span> allows you to enter your battle-tag to see your profile, your last played heroes, your items, skills and more.
+        Diablo III is a genre-defining action-RPG set in Sanctuary, a world
+        ravaged by the eternal conflict between angels and demons.
+      </p>
+      <p class="lead">
+        <span class="font-weight-bold">D3PF</span> allows you to enter your
+        battle-tag to see your profile, your last played heroes, your items,
+        skills and more.
       </p>
     </div>
 
@@ -19,10 +22,13 @@
     <div class="mt-5">
       <h2 class="mb-4">API Rate Limit</h2>
       <b-alert show variant="dark">
-        Clients exceeding these limits may experience slower service or a response error. See the
+        Clients exceeding these limits may experience slower service or a
+        response error. See the
         <a
           href="https://develop.battle.net/documentation/guides/getting-started"
-        >Getting Started Guide</a> for more details.
+          >Getting Started Guide</a
+        >
+        for more details.
       </b-alert>
 
       <dl class="row mt-5 text-center text-sm-left">
@@ -54,7 +60,8 @@
         Read more here:
         <a
           href="https://develop.battle.net/documentation/guides/getting-started"
-        >https://develop.battle.net/documentation/guides/getting-started</a>
+          >https://develop.battle.net/documentation/guides/getting-started</a
+        >
       </p>
     </div>
 
